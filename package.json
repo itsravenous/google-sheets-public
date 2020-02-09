@@ -1,0 +1,28 @@
+{
+  "name": "@itsravenous/google-sheets-public",
+  "version": "1.0.0",
+  "description": "Zero-dependency module to fetch data from a public Google Sheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsravenous/google-sheets-public.git"
+  },
+  "keywords": [
+    "google-sheets",
+    "data",
+    "spreadsheet"
+  ],
+  "author": "Tom Jardine-McNamara <tom@itsravenous.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/itsravenous/google-sheets-public/issues"
+  },
+  "homepage": "https://github.com/itsravenous/google-sheets-public#readme",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "nock": "^11.7.2"
+  }
+}
