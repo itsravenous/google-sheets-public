@@ -1,12 +1,12 @@
 const https = require('https');
 
-function fetchSheet({sheetId, apiKey, tabName, callback}) {
+function fetchSheet({sheetId, apiKey, tabName}) {
   if(!sheetId) throw('sheetId is required')
   if(!tabName) throw('tabName is required')
   if(!apiKey) throw('apiKey is required')
-  if(!callback) throw('callback is required')
 
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${tabName}?key=${apiKey}`;
+  return new Promise((resolve, reject) => {
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${tabName}?key=${apiKey}`;
   https.get(url, res => {
     let body = "";
 
@@ -17,13 +17,14 @@ function fetchSheet({sheetId, apiKey, tabName, callback}) {
     res.on("end", () => {
       try {
         let json = JSON.parse(body);
-        callback(undefined, json)
+        resolve(json)
       } catch (error) {
-        callback(error)
+        reject(error)
       };
     });
 
-  }).on("error", callback)
+  }).on("error", reject)
+  })
 }
 
 module.exports.fetchSheet = fetchSheet;
