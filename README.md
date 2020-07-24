@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/itsravenous/google-sheets-public/workflows/Node.js%20CI/badge.svg)
+
 # @itsravenous/google-sheets-public
 Simple, zero-dependency package for fetching data from public Google sheets.
 
