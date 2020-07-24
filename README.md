@@ -14,6 +14,7 @@ Simple, zero-dependency package for fetching data from public Google sheets.
 ```js
 const { fetchSheet } = require('@itsravenous/google-sheets-public');
 
-fetchSheet({ sheetId: 'your-sheet-id', tabName: 'Sheet 1', apiKey: 'your-api-key', callback: (error, values) => console.log(values) });
+fetchSheet({ sheetId: 'your-sheet-id', tabName: 'Sheet 1', apiKey: 'your-api-key' })
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
 ```
-
